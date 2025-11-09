@@ -71,9 +71,10 @@ impl AIService {
 
     async fn call_gemini(&self, prompt: &str) -> Result<String, Box<dyn Error + Send + Sync>> {
         let url = format!(
-            "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key={}",
+            "https://generativelanguage.googleapis.com/v1/models/gemini-2.5-flash:generateContent?key={}",
             self.api_key
         );
+
 
         let request_body = GeminiRequest {
             contents: vec![Content {

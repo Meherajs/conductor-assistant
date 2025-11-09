@@ -1,0 +1,29 @@
+{
+  "name": "Conductor Assistant Backend",
+  "description": "Rust backend for AI-powered presentation assistance",
+  "version": "0.1.0",
+  "endpoints": [
+    {
+      "method": "GET",
+      "path": "/health",
+      "description": "Health check endpoint",
+      "response": "OK"
+    },
+    {
+      "method": "POST",
+      "path": "/ai-assist",
+      "description": "AI-powered slide analysis",
+      "requestBody": {
+        "command": "summarize | ask-question",
+        "text": "Slide content text"
+      },
+      "responseBody": {
+        "result": "AI-generated response"
+      }
+    }
+  ],
+  "commands": {
+    "summarize": "Get a concise summary of the slide's key takeaway",
+    "ask-question": "Generate a likely audience question about the slide"
+  }
+}
